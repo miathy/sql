@@ -1,5 +1,5 @@
 -- 1/ Get the Top 3 film that have the most CUSTOMERS book
-select screening.film_id , count(customer_id) as customer_count 
+select screening.film_id , count(distinct customer_id) as customer_count 
 from screening join booking  on screening.id = booking.screening_id
 group by film_id 
 order by customer_count desc
